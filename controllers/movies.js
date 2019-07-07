@@ -12,7 +12,7 @@ module.exports.controller = (app) => {
     	});
     });
     // fetch a single movie
-    app.get('/api/movies/:id', (req, res) => {
+    app.get('/movies/:id', (req, res) => {
     	MovieSchema.findById(req.params.id, 'name description release_year genre', (error, movie) => {
     		if (error) { console.log(error); };
     		res.send(movie);

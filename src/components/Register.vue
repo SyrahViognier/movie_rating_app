@@ -43,12 +43,12 @@ export default {
     confirm_password: '',
     emailRules: [
       v => !!v || 'E-mail is required',
-      v => /\S+@\S+\.\S+/.test(v) || 'E-mail mst be valid',
+      v => /\S+@\S+\.\S+/.test(v) || 'E-mail must be valid',
     ],
   }),
   methods: {
     async submit() {
-      if (this.$$refs.form.validate()) {
+      if (this.$refs.form.validate()) {
         return axios({
           method: 'post',
           data: {
